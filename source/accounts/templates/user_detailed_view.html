@@ -39,6 +39,7 @@
             <th scope="col">Category</th>
             <th scope="col">Author</th>
             <th scope="col">Price</th>
+            <th scope="col">Status</th>
             <th scope="col">Date Created</th>
 
         </tr>
@@ -62,9 +63,16 @@
             <td>{{ ad.category }}</td>
             <td>{{ ad.author }}</td>
             <td>{{ ad.price }}</td>
+            <td>{{ ad.status }}</td>
             <td>{{ ad.date_created }}</td>
+              <td><a class="btn btn-primary btn-sm ps-3 pe-3"
+                   href="{% url "webapp:advertisement_detail" ad.pk %}">Detail</a></td>
             <td><a class="btn btn-primary btn-sm ps-3 pe-3"
-                   href="{% url "webapp:advertisement_operator_detail" ad.pk %}">Detail</a></td>
+                   href="{% url "webapp:advertisement_update" ad.pk %}">Update</a></td>
+
+            <td><a class="btn btn-primary btn-sm ps-3 pe-3"
+                   href="{% url "webapp:advertisement_delete" ad.pk %}">Delete</a></td>
+
         {% endfor %}
         </tbody>
     </table>
