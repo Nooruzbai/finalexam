@@ -5,7 +5,7 @@ from phonenumber_field.formfields import PhoneNumberField
 
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), related_name="profile", on_delete=models.CASCADE, verbose_name='Profile')
-    phone_number = PhoneNumberField(unique=True, region="KG", max_length=100, verbose_name="Phone number")
+    phone_number = PhoneNumberField(region="KG", max_length=13)
 
     class Meta:
         verbose_name = 'Profile'

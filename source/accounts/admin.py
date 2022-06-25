@@ -7,7 +7,7 @@ from webapp.models import User
 
 
 class ProfileInLine(admin.StackedInline):
-    fields = ("avatar", "about_me", "git_link")
+    fields = ("id", "phone_number")
     model = Profile
 
 
@@ -16,4 +16,4 @@ class UserProfileAdmin(UserAdmin):
 
 
 admin.site.unregister(User)
-admin.site.register(get_user_model(), UserProfileAdmin)
+admin.site.register(Profile)
