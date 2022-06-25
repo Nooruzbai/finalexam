@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 User = get_user_model()
-CHOICES = [('to_moderate', 'To Moderate'), ('published', 'Published'), ('canceled', 'Canceled')]
+CHOICES = [('to_moderate', 'To Moderate'), ('published', 'Published'), ('canceled', 'Canceled'), ('deleted', 'Deleted')]
 
 
 class Advertisement(models.Model):

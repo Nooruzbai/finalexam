@@ -2,21 +2,21 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
-
 from webapp.forms import AdvertisementForm
 from webapp.models import Advertisement
+from webapp.templates.base import SearchView
 
 User = get_user_model()
 
 
-class AdvertisementListView(ListView):
+class AdvertisementListView(SearchView):
     template_name = 'index.html'
     model = Advertisement
     context_object_name = "advertisments"
     paginate_by = 5
     paginate_orphans = 0
-    # search_fields = ["title__icontains", "author__icontains"]
     ordering = ["-date_created"]
+    search_fields = ['headline']
 
 
 class AdvertisementCreateView(CreateView):
