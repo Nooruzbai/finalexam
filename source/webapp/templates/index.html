@@ -32,6 +32,11 @@
             <td>{{ ad.date_created }}</td>
             <td><a class="btn btn-primary btn-sm ps-3 pe-3"
                    href="{% url "webapp:advertisement_detail" ad.pk %}">Detail</a></td>
+             <td><a class="btn btn-primary btn-sm ps-3 pe-3"
+                   href="{% url "webapp:advertisement_update" ad.pk %}">Update</a></td>
+
+             <td><a class="btn btn-primary btn-sm ps-3 pe-3"
+                   href="{% url "webapp:advertisement_delete" ad.pk %}">Delete</a></td>
 
         {% endfor %}
     </table>

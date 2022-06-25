@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 
 from webapp.forms import AdvertisementForm
 from webapp.models import Advertisement
@@ -35,3 +35,29 @@ class AdvertisementDetailView(DetailView):
     template_name = 'detail.html'
     model = Advertisement
     context_object_name = 'advertisement'
+
+
+class AdvertisementDeleteView(DeleteView):
+    model = Advertisement
+    template_name = "delete.html"
+    context_object_name = 'advertisement'
+    # permission_required = "webapp.delete_gallery"
+    success_url = reverse_lazy('webapp:webapp_list')
+
+    # def has_permission(self):
+    #     return super().has_permission() or self.request.user == self.get_object().author
+
+    # def get_success_url(self):
+    #     return reverse('webapp:webapp_list', kwargs={"pk": self.object.pk})
+
+class AdvertisementUpdateView(UpdateView):
+    form_class = AdvertisementForm
+    template_name = "update.html"
+    model = Advertisement
+    # permission_required = "webapp.change_gallery"
+
+    # def has_permission(self):
+    #     return super().has_permission() or self.request.user == self.get_object().author
+
+    def get_success_url(self):
+        return reverse('webapp:advertisement_detail', kwargs={'pk': self.object.pk})
