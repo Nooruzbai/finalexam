@@ -75,7 +75,7 @@
     "date_created": "2022-06-25T09:29:42.985Z",
     "date_edited": "2022-06-25T09:29:42.985Z",
     "date_published": "2022-06-25T09:29:42.985Z",
-    "status": "('to_moderate', 'To Moderate')",
+    "status": "to_moderate",
     "author": 1
   }
 },
@@ -91,7 +91,7 @@
     "date_created": "2022-06-25T10:43:06.064Z",
     "date_edited": "2022-06-25T10:43:06.064Z",
     "date_published": "2022-06-25T10:43:06.064Z",
-    "status": "('to_moderate', 'To Moderate')",
+    "status": "to_moderate",
     "author": 1
   }
 },
