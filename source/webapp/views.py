@@ -57,6 +57,10 @@ class AdvertisementUpdateView(PermissionRequiredMixin, UpdateView):
     model = Advertisement
     permission_required = "webapp.change_advertisement"
 
+    def form_valid(self, form):
+        form.instance.status = "to_moderate"
+        return super().form_valid(form)
+
     def has_permission(self):
         return super().has_permission() or self.request.user == self.get_object().author
 

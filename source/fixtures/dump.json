@@ -1,0 +1,167 @@
+[
+{
+  "model": "webapp.advertisement",
+  "pk": 1,
+  "fields": {
+    "category": 3,
+    "image": "images/WagyuStripSteak_8324549421.jpg",
+    "headline": "Wagyu",
+    "description": "The best",
+    "price": null,
+    "date_created": "2022-06-25T05:54:22.566Z",
+    "date_edited": "2022-06-25T05:54:22.566Z",
+    "date_published": "2022-06-25T10:35:52.709Z",
+    "status": "published",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 2,
+  "fields": {
+    "category": 3,
+    "image": "images/WagyuStripSteak_8324549421_fUbKHUQ.jpg",
+    "headline": "Wagyu",
+    "description": "The Best",
+    "price": null,
+    "date_created": "2022-06-25T05:57:04.736Z",
+    "date_edited": "2022-06-25T05:57:04.736Z",
+    "date_published": "2022-06-25T10:35:15.291Z",
+    "status": "published",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 3,
+  "fields": {
+    "category": 3,
+    "image": "images/WagyuStripSteak_8324549421_tIdSSB0.jpg",
+    "headline": "Wagyu",
+    "description": "The Best",
+    "price": null,
+    "date_created": "2022-06-25T05:57:22.138Z",
+    "date_edited": "2022-06-25T05:57:22.138Z",
+    "date_published": "2022-06-25T05:57:22.138Z",
+    "status": "published",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "image": "images/1523322.jpg",
+    "headline": "The best",
+    "description": "The best",
+    "price": null,
+    "date_created": "2022-06-25T08:31:10.540Z",
+    "date_edited": "2022-06-25T08:31:10.540Z",
+    "date_published": "2022-06-25T10:27:38.120Z",
+    "status": "published",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "image": "images/jacky_chan.jpg",
+    "headline": "Champ",
+    "description": "champ",
+    "price": null,
+    "date_created": "2022-06-25T09:29:42.985Z",
+    "date_edited": "2022-06-25T09:29:42.985Z",
+    "date_published": "2022-06-25T09:29:42.985Z",
+    "status": "('to_moderate', 'To Moderate')",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 6,
+  "fields": {
+    "category": 3,
+    "image": "images/apple1.jpg",
+    "headline": "Apple",
+    "description": "The best Apple",
+    "price": null,
+    "date_created": "2022-06-25T10:43:06.064Z",
+    "date_edited": "2022-06-25T10:43:06.064Z",
+    "date_published": "2022-06-25T10:43:06.064Z",
+    "status": "('to_moderate', 'To Moderate')",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 7,
+  "fields": {
+    "category": 3,
+    "image": "images/apple1_0u9VUH1.jpg",
+    "headline": "Apple2",
+    "description": "The best Apple 2",
+    "price": null,
+    "date_created": "2022-06-25T10:47:30.333Z",
+    "date_edited": "2022-06-25T10:47:30.333Z",
+    "date_published": "2022-06-25T10:47:44.353Z",
+    "status": "published",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 8,
+  "fields": {
+    "category": 1,
+    "image": "images/car.jpg",
+    "headline": "car",
+    "description": "The best Car",
+    "price": null,
+    "date_created": "2022-06-25T11:22:04.276Z",
+    "date_edited": "2022-06-25T11:22:04.276Z",
+    "date_published": "2022-06-25T12:01:23.871Z",
+    "status": "published",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.advertisement",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "image": "images/800px-Shashlyk_apr2011.jpeg",
+    "headline": "Shashlik",
+    "description": "The best shashlik",
+    "price": null,
+    "date_created": "2022-06-25T12:01:59.214Z",
+    "date_edited": "2022-06-25T12:01:59.215Z",
+    "date_published": "2022-06-25T12:01:59.215Z",
+    "status": "to_moderate",
+    "author": 1
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "name": "cars"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "name": "washing"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "name": "butcher"
+  }
+}
+]
