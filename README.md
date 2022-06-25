@@ -22,3 +22,8 @@ pip install -r requirements.txt
 ./manage.py loaddata fixtures/auth.json
 ./manage.py loaddata fixtures/dump.json
 
+
+Для доступа в панель администратора перейдите по ссылке http://localhost:8000/admin
+
+
+./manage.py runserver
