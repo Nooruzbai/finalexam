@@ -32,11 +32,9 @@
             <td>{{ advertisement.date_created }}</td>
 
 
-            <td><a class="btn btn-primary btn-sm ps-3 pe-3"
-                   href="{% url "webapp:advertisement_update" advertisement.pk %}">Update</a></td>
+            <td><a class="btn btn-primary btn-sm ps-3 pe-3" onclick="Moderate(event)" data-api-url="{% url "api:moderate_status" advertisement.pk %}">To Moderate</a></td>
 
-            <td><a class="btn btn-primary btn-sm ps-3 pe-3"
-                   href="{% url "webapp:advertisement_delete" advertisement.pk %}">Delete</a></td>
+            <td><a class="btn btn-primary btn-sm ps-3 pe-3" onclick="Cancel(event)" data-api-url="{% url "api:cancel_status" advertisement.pk %}">Cancel</a></td>
 
     </table>
 

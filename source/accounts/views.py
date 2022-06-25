@@ -9,13 +9,6 @@ from django.views.generic import CreateView, DetailView
 from accounts.forms import MyUserCreationForm
 
 
-@ensure_csrf_cookie
-def get_csrf_token(request):
-    if request.method == "GET":
-        return JsonResponse({'success': 'success'})
-    return HttpResponseNotAllowed(['GET'])
-
-
 class RegisterView(CreateView):
     model = User
     template_name = "registration.html"

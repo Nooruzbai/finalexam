@@ -12,7 +12,6 @@ class ModeratorList(ListView):
     paginate_orphans = 0
     ordering = ["-date_created"]
 
-
     def get_queryset(self):
         return super().get_queryset().filter(status="to_moderate")
 

@@ -14,7 +14,7 @@ class Advertisement(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, verbose_name="Date created")
     date_edited = models.DateTimeField(auto_now_add=True, verbose_name="Date edited")
     date_published = models.DateTimeField(auto_now_add=True, verbose_name="Date published")
-    status = models.CharField(default=CHOICES[0], choices=CHOICES, max_length=100, null=False, blank=False, verbose_name="Status")
+    status = models.CharField(default=CHOICES[0][0], choices=CHOICES, max_length=100, null=False, blank=False, verbose_name="Status")
     author = models.ForeignKey("accounts.Profile", null=False, blank=False, on_delete=models.CASCADE, related_name="advertisements", verbose_name="Advertisement")
 
     def __str__(self):

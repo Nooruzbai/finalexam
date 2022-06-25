@@ -15,32 +15,28 @@ async function make_request(url, context) {
 }
 
 
-let get_csrf_token = async function(){
-    let url = "api/get-csrf-token/"
-    let request_csrf_token = await make_request(url, {method: "GET"} );
-    console.log(request_csrf_token)
+let Moderate = async function (event) {
+    let url = event.target.dataset.apiUrl;
 
-}
-
-
- function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        let cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
+    let data = await make_request(url, {
+        method: "GET", headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
-    }
-    return cookieValue;
+    })
+
 }
 
-get_csrf_token();
-let csrf_token = getCookie('csrftoken');
+let Cancel = async function (event) {
+    console.log(event.target)
 
+    let url = event.target.dataset.apiUrl;
+    console.log(url)
 
- // let request_data = await make_request(url, {method: "POST", body:data, headers: {'X-CSRFtoken': csrf_token}})
+      let data = await make_request(url, {
+        method: "GET", headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+}
