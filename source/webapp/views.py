@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DetailView, DeleteView, UpdateView
 from webapp.forms import AdvertisementForm
@@ -19,7 +19,7 @@ class AdvertisementListView(SearchView):
     search_fields = ['headline']
 
 
-class AdvertisementCreateView(PermissionRequiredMixin, CreateView):
+class AdvertisementCreateView(LoginRequiredMixin, CreateView):
     model = Advertisement
     form_class = AdvertisementForm
     template_name = "create.html"
@@ -31,11 +31,10 @@ class AdvertisementCreateView(PermissionRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class AdvertisementDetailView(PermissionRequiredMixin, DetailView):
+class AdvertisementDetailView(DetailView):
     template_name = 'detail.html'
     model = Advertisement
     context_object_name = 'advertisement'
-    permission_required = "webapp.view_advertisement"
 
 
 class AdvertisementDeleteView(PermissionRequiredMixin, DeleteView):
@@ -58,8 +57,8 @@ class AdvertisementUpdateView(PermissionRequiredMixin, UpdateView):
     model = Advertisement
     permission_required = "webapp.change_advertisement"
 
-    # def has_permission(self):
-    #     return super().has_permission() or self.request.user == self.get_object().author
+    def has_permission(self):
+        return super().has_permission() or self.request.user == self.get_object().author
 
     def get_success_url(self):
         return reverse('webapp:advertisement_detail', kwargs={'pk': self.object.pk})

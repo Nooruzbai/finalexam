@@ -23,7 +23,8 @@ let Moderate = async function (event) {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
-    })
+    }
+    )
 
 }
 

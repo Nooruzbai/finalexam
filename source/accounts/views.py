@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.http import JsonResponse, HttpResponseNotAllowed
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
@@ -32,13 +30,3 @@ class UserDetailView(DetailView):
     template_name = 'user_detailed_view.html'
     model = User
     context_object_name = 'user_object'
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     images = self.object.image_s.all()
-    #     galleries = self.object.gallerie_s.all()
-    #     favourite_images = self.object.image_s.filter(private=True)
-    #     context['images'] = images
-    #     context['galleries'] = galleries
-    #     context['favourite'] = favourite_images
-    #     return context
