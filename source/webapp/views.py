@@ -1,10 +1,10 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
+from django.views.generic import CreateView, DetailView, DeleteView, UpdateView
 from webapp.forms import AdvertisementForm
 from webapp.models import Advertisement
-from webapp.templates.base import SearchView
+from webapp.base import SearchView
 
 User = get_user_model()
 
@@ -48,8 +48,8 @@ class AdvertisementDeleteView(PermissionRequiredMixin, DeleteView):
     def has_permission(self):
         return super().has_permission() or self.request.user == self.get_object().author
 
-    # def get_success_url(self):
-    #     return reverse('webapp:webapp_list', kwargs={"pk": self.object.pk})
+    def get_success_url(self):
+        return reverse('webapp:webapp_list', kwargs={"pk": self.object.pk})
 
 class AdvertisementUpdateView(PermissionRequiredMixin, UpdateView):
     form_class = AdvertisementForm

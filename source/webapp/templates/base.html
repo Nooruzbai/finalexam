@@ -37,7 +37,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
                         </li>
+
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="{% url "accounts:user_detailed_view" user.profile.id %}">Hello, {{ user.profile.first_name }}!</a>
+                        {{ user.id }}
+                    </li>
                 </ul>
             </div>
         </div>
