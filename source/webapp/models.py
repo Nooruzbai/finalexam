@@ -6,7 +6,7 @@ CHOICES = [('to_moderate', 'To Moderate'), ('published', 'Published'), ('cancele
 
 
 class Advertisement(models.Model):
-    category = models.CharField(max_length=100, null=False, blank=False, verbose_name="Category")
+    category = models.ForeignKey('webapp.Category', null=False, blank=False, on_delete=models.CASCADE, related_name="advertisements", verbose_name="Category")
     image = models.ImageField(upload_to="images/", null=False, blank=False, verbose_name="Image")
     headline = models.CharField(max_length=100, null=False, blank=False, verbose_name="Headline")
     description = models.TextField(max_length=100, null=True, blank=False, verbose_name="Description")
@@ -28,7 +28,6 @@ class Advertisement(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False, verbose_name="Name")
-    advertisement = models.ForeignKey('webapp.Advertisement', null=False, blank=False, on_delete=models.CASCADE, related_name="categories", verbose_name="Advertisement")
 
     def __str__(self):
         return f"{self.pk}. {self.name}"

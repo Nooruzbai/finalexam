@@ -6,7 +6,4 @@ from webapp.models import Advertisement
 class AdvertisementForm(forms.ModelForm):
     class Meta:
         model = Advertisement
-        fields = ("headline", "image", "description", "status", )
-        widgets = {
-            'status': forms.CheckboxSelectMultiple
-        }
+        fields = ("headline", "image", "description", "category",)

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="table">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Category</th>
+            <th scope="col">Author</th>
+            <th scope="col">Date Created</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ advertisement.pk }}</th>
+
+                {% if advertisement.image %}
+                    <td><img class="image" src="{{ advertisement.image.url }}" height="100" width="100" alt="ad image">
+                    </td>
+                {% else %}
+                    <td><img class="image" height="100" width="100"
+                             src="https://pbs.twimg.com/profile_images/496102814880239616/IDgM95XQ_400x400.png"
+                             alt="Block Image"></td>
+
+                {% endif %}
+
+
+                <td>{{ advertisement.category }}</td>
+                <td>{{ advertisement.author }}</td>
+                <td>{{ advertisement.date_created }}</td>
+    </table>
+
+{% endblock %}
