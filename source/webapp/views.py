@@ -19,11 +19,11 @@ class AdvertisementListView(SearchView):
     search_fields = ['headline']
 
 
-class AdvertisementCreateView(CreateView):
+class AdvertisementCreateView(PermissionRequiredMixin, CreateView):
     model = Advertisement
     form_class = AdvertisementForm
     template_name = "create.html"
-    permission_required = "webapp.add_article"
+    permission_required = "webapp.add_advertisement"
     success_url = reverse_lazy('webapp:webapp_list')
 
     def form_valid(self, form):
@@ -31,30 +31,31 @@ class AdvertisementCreateView(CreateView):
         return super().form_valid(form)
 
 
-class AdvertisementDetailView(DetailView):
+class AdvertisementDetailView(PermissionRequiredMixin, DetailView):
     template_name = 'detail.html'
     model = Advertisement
     context_object_name = 'advertisement'
+    permission_required = "webapp.view_advertisement"
 
 
-class AdvertisementDeleteView(DeleteView):
+class AdvertisementDeleteView(PermissionRequiredMixin, DeleteView):
     model = Advertisement
     template_name = "delete.html"
     context_object_name = 'advertisement'
-    # permission_required = "webapp.delete_gallery"
+    permission_required = "webapp.delete_advertisement"
     success_url = reverse_lazy('webapp:webapp_list')
 
-    # def has_permission(self):
-    #     return super().has_permission() or self.request.user == self.get_object().author
+    def has_permission(self):
+        return super().has_permission() or self.request.user == self.get_object().author
 
     # def get_success_url(self):
     #     return reverse('webapp:webapp_list', kwargs={"pk": self.object.pk})
 
-class AdvertisementUpdateView(UpdateView):
+class AdvertisementUpdateView(PermissionRequiredMixin, UpdateView):
     form_class = AdvertisementForm
     template_name = "update.html"
     model = Advertisement
-    # permission_required = "webapp.change_gallery"
+    permission_required = "webapp.change_advertisement"
 
     # def has_permission(self):
     #     return super().has_permission() or self.request.user == self.get_object().author

@@ -14,7 +14,7 @@ class SearchView(ListView):
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self):
-        queryset = super().get_queryset()
+        queryset = super().get_queryset().filter(status="published")
         if self.search_value:
             query = self.get_query()
             queryset = queryset.filter(query)
@@ -38,6 +38,6 @@ class SearchView(ListView):
     def get_query(self):
         query = Q(headline__icontains=self.search_value) | Q(headline__icontains=self.search_value)
         for field in self.search_fields:
-            kwargs = {field: self.search_value}  #"title__icontains":"Ста"
-            query = query | Q(**kwargs)          #title__icontains="Ста"
+            kwargs = {field: self.search_value}
+            query = query | Q(**kwargs)
             return query
