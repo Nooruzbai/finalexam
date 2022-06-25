@@ -13,30 +13,7 @@
 
         </tr>
         </thead>
-        <tbody>
-        {% for ad in advertisements %}
-            <tr>
-            <th scope="row">{{ ad.pk }}</th>
 
-            {% if ad.image %}
-                <td><img class="image" src="{{ ad.image.url }}" height="100" width="100" alt="ad image">
-                </td>
-            {% else %}
-                <td><img class="image" height="100" width="100"
-                         src="https://pbs.twimg.com/profile_images/496102814880239616/IDgM95XQ_400x400.png"
-                         alt="Block Image"></td>
-
-            {% endif %}
-
-
-            <td>{{ ad.category }}</td>
-            <td>{{ ad.author }}</td>
-            <td>{{ ad.price }}</td>
-            <td>{{ ad.date_created }}</td>
-            <td><a class="btn btn-primary btn-sm ps-3 pe-3"
-                   href="{% url "webapp:advertisement_operator_detail" ad.pk %}">Detail</a></td>
-
-        {% endfor %}
     </table>
 
 
