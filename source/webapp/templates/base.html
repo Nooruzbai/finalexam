@@ -26,6 +26,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'webapp:advertisement_create' %}">Создание статьи</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'webapp:moderator_list' %}">Страница для модератора</a>
+                    </li>
+
                     {% if not user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
@@ -39,11 +44,10 @@
                         </li>
 
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="{% url "accounts:user_detailed_view" user.profile.id %}">Hello, {{ user.profile.first_name }}!</a>
-                        {{ user.id }}
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link"#}
+{#                           href="{% url "accounts:user_detailed_view" user.profile.id %}">Hello, {{ user.profile.first_name }}!</a>#}
+{#                    </li>#}
                 </ul>
             </div>
         </div>

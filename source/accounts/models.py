@@ -16,4 +16,4 @@ class Profile(models.Model):
         permissions = []
 
     def __str__(self):
-        return f"Profile: {self.user}. {self.id} {self.last_name} {self.first_name}"
+        return f"Profile: {self.user}. {self.id} {self.last_name} {self.first_name}, {self.phone_number} "

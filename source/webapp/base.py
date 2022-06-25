@@ -14,7 +14,7 @@ class SearchView(ListView):
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self):
-        queryset = super().get_queryset().filter(status="published")
+        queryset = super().get_queryset().filter(status="published").order_by("-date_created")
         if self.search_value:
             query = self.get_query()
             queryset = queryset.filter(query)

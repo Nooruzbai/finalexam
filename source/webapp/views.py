@@ -51,6 +51,7 @@ class AdvertisementDeleteView(PermissionRequiredMixin, DeleteView):
     def get_success_url(self):
         return reverse('webapp:webapp_list', kwargs={"pk": self.object.pk})
 
+
 class AdvertisementUpdateView(PermissionRequiredMixin, UpdateView):
     form_class = AdvertisementForm
     template_name = "update.html"
@@ -62,3 +63,5 @@ class AdvertisementUpdateView(PermissionRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('webapp:advertisement_detail', kwargs={'pk': self.object.pk})
+
+
